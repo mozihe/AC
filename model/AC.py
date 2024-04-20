@@ -35,6 +35,11 @@ class AC:
             self.actor.to(self.device)
             self.critic.to(self.device)
             self.old_critic.to(self.device)
+        else:
+            self.device = 'cpu'
+            self.actor.to(self.device)
+            self.critic.to(self.device)
+            self.old_critic.to(self.device)
 
         self.epsilon = self.epsilon_start
         self.learn_table = []
